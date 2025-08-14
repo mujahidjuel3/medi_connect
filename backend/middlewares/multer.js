@@ -1,11 +1,10 @@
+import express from "express";
 import multer from "multer";
+import { addDoctor } from "../controllers/adminController.js";
 
-const storage = multer.diskStorage({
-    filename: function(req,file,callback){
-        callback(null, file.originalname)
-    }
-})
+const router = express.Router();
+const upload = multer({ dest: "uploads/" }); // temp folder
 
-const upload = multer({storage})
+router.post("/add-doctor", upload.single("image"), addDoctor);
 
-export default upload
+export default router;

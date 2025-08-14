@@ -1,9 +1,11 @@
-import express from "express"
-import { addDoctor } from "../controllers/adminController.js"
-import upload from "../middlewares/multer.js"
+import express from "express";
+import { addDoctor, loginAdmin } from "../controllers/adminController.js";
+import upload from "../middlewares/multer.js";
 
-const adminRouter = express.Router()
+const router = express.Router();
 
-adminRouter.post('/add-doctor',upload.single('image'),addDoctor)
+// Single image upload field name হতে হবে "image" (Frontend form এর সাথে match)
+router.post("/add-doctor", upload.single("image"), addDoctor);
+router.post("/login", loginAdmin);
 
-export default adminRouter
+export default router;

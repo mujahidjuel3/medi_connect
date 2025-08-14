@@ -1,6 +1,6 @@
 import React from 'react'
-import Appointment from '../assets/assets_frontend/appointment_img.png'
 import { useNavigate } from 'react-router-dom'
+import {assets} from '../assets/assets'
 
 const Banner = () => {
     
@@ -19,7 +19,7 @@ const Banner = () => {
 
         {/*....Right side....*/}
         <div className='hidden md:block md:w-1/2 lg:w-[370px] relative'>
-            <img className='w-full absolute bottom-0 right-0 max-w-md' src={Appointment} alt='' />
+            <img className='w-full absolute bottom-0 right-0 max-w-md' src={assets.appointment_img} alt='' />
         </div>
         
     </div>

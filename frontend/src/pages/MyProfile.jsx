@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
-import ProfilePic from '../assets/assets_frontend/profile_pic.png';
+import { assets } from "../assets/assets";
 
 const MyProfile = () => {
 
   const [userData, setUserData] = useState({
     name:"Mujahid Juel",
-    image:ProfilePic,
     email:'mujahidjuel@gmail.com',
     phone:'+880 1727983686',
     address:{
@@ -19,7 +18,7 @@ const MyProfile = () => {
   const [isEdit, setIsEdit] = useState(false)
   return (
     <div className='max-w-lg flex flex-col gap-2 text-sm'>
-      <img className='w-36 rounded' src={userData.image} alt='' />
+      <img className='w-36 rounded' src={assets.profile_pic} alt='' />
       {
         isEdit ? <input className='bg-gray-300 text-3xl font-medium max-w-60 mt-4' type='text'  value={userData.name} onChange={(e) => setUserData(prev =>({...prev,name:e.target.value}))}/> :
         <p className='font-medium text-3xl text-neutral-800 mt-4'>{userData.name}</p>
